@@ -1,0 +1,23 @@
+.Button {
+  border: 1px solid var(--gray);
+  padding: 0.25rem 0.75rem;
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Button[typeButton="primary"] {
+  background-color: var(--blue);
+}
+
+.Button[typeButton="secondary"] {
+  background-color: var(--red);
+}
+
+.Button[typeButton="tertiary"] {
+  background-color: var(--yellow);
+}
+
+.Button:hover {
+  scale: 1.1;
+}

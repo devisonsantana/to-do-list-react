@@ -1,0 +1,17 @@
+.Footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--black);
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.Footer img {
+  max-height: 1.2rem;
+}

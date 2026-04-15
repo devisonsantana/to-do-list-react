@@ -1,0 +1,19 @@
+.Item {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: var(--medium-white);
+  border-radius: 1rem;
+  padding: 0.45rem 0.75rem;
+  width: 100%;
+  font-size: 1.22rem;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: row;
+  gap: .3rem;
+}

@@ -1,0 +1,15 @@
+.Form {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 50%;
+}
+
+@media (max-width: 770px) {
+  .Form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

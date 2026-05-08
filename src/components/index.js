@@ -6,3 +6,4 @@ export * from "./TextField";
 export * from "./Button";
 export * from "./TaskList";
 export * from "./Loading";
+export * from "./Auth";

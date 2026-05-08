@@ -1,0 +1,32 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.group label {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.group input {
+  padding: 12px;
+  border: 2px solid var(--gray);
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+  background: var(--white);
+}
+
+.group input:focus {
+  border-color: var(--yellow);
+}
+
+.error {
+  color: var(--danger);
+  font-size: 14px;
+}
+
+.errorInput {
+  border-color: var(--danger) !important;
+}

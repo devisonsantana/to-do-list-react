@@ -2,9 +2,13 @@ import { useAppContext } from "../../hooks";
 import { Item } from "./Item/";
 import { Loading } from "../";
 import style from "./TaskList.module.css";
+import { useEffect } from "react";
 
 const TaskList = () => {
-  const { tasks, tasksLoading } = useAppContext();
+  const { tasks, tasksLoading, loadTasks } = useAppContext();
+  useEffect(() => {
+    loadTasks();
+  }, []);
   return (
     <div className={style.TaskList}>
       {tasksLoading && <Loading />}

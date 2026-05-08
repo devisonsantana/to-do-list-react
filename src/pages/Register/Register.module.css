@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.separator hr {
+  border: none;
+  border-top: 1px solid var(--gray);
+}
+
+.loginText {
+  text-align: center;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.loginText:hover {
+  color: var(--yellow);
+}

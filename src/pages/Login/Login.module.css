@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--grey);
+  font-size: 14px;
+}
+
+.separator hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid var(--gray);
+}

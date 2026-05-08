@@ -5,7 +5,7 @@ import { useAppContext } from "../../hooks";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { login } = useAppContext();
+  const { login, isAuthenticated } = useAppContext();
 
   const [loading, setLoading] = useState(false);
 
@@ -65,7 +65,6 @@ const Login = () => {
     navigate("/", { replace: true });
   };
 
-  const isAuthenticated = localStorage.getItem("accessToken");
   if (isAuthenticated) {
     return <Navigate to="/" />;
   }

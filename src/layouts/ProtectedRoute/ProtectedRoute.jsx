@@ -1,9 +1,11 @@
 import { Navigate } from "react-router-dom";
+import { useAppContext } from "../../hooks";
 
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = localStorage.getItem("accessToken");
+  const { isAuthenticated, isTokenExpired } = useAppContext();
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated || isTokenExpired) {
+    localStorage.clear();
     return <Navigate to="/login" />;
   }
 

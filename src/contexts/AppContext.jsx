@@ -13,11 +13,24 @@ const AppContextProvider = (props) => {
   const [editLoading, setEditLoading] = useState([]);
   const [deleteLoading, setDeleteLoading] = useState([]);
 
+  // Verifies if is already authenticated
+  const isAuthenticated = () => !!localStorage.getItem("accessToken");
+
+  // Verifies expiration date time
+  const isTokenExpired = () => {
+    const expiresAt = localStorage.getItem("expiresAt");
+
+    if (!expiresAt) return true;
+
+    return new Date() > new Date(expiresAt);
+  };
+
   // LOGIN METHOD
   const login = async (loginForm) => {
     try {
       const { data } = await api.post("/login", loginForm);
       localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("expiresAt", data.expiresAt);
       return {
         success: true,
         response: {
@@ -162,6 +175,8 @@ const AppContextProvider = (props) => {
         loadTasks,
         login,
         register,
+        isAuthenticated,
+        isTokenExpired,
       }}
     >
       {children}

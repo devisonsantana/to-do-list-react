@@ -14,7 +14,7 @@ const TaskList = () => {
       {tasksLoading && <Loading />}
       {!tasks.length && !tasksLoading && <p>Não há tarefas no momento...</p>}
       {tasks.map((item) => (
-        <Item key={item.id} id={item.id} name={item.name} />
+        <Item key={item.id} id={item.id} name={item.name} isNew={item.isNew} />
       ))}
     </div>
   );

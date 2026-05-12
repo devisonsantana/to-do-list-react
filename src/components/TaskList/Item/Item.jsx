@@ -1,10 +1,10 @@
 import style from "./Item.module.css";
 import { BUTTON_TYPES, Button, Loading, TextField } from "../../";
 import { useAppContext } from "../../../hooks";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Item = (props) => {
-  const { id, name } = props;
+  const { id, name, isNew } = props;
   const { deleteTask, editTask, editLoading, deleteLoading } = useAppContext();
   const [editing, setEditing] = useState(false);
 
@@ -25,8 +25,17 @@ const Item = (props) => {
   const isEditingLoading = editLoading.includes(id);
   const isDeletingLoading = deleteLoading.includes(id);
 
+  const itemRef = useRef(null);
+
+  useEffect(() => {
+    if (itemRef.current && isNew) {
+      console.log(itemRef.current);
+      itemRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   return (
-    <div className={style.Item}>
+    <div className={style.Item} ref={itemRef}>
       {editing && !isEditingLoading && (
         <TextField
           onBlur={saveUpdate}

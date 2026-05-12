@@ -62,7 +62,7 @@ const Login = () => {
       return;
     }
 
-    navigate("/", { replace: true });
+    navigate("/");
   };
 
   if (isAuthenticated()) {

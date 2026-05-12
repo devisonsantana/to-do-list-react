@@ -4,6 +4,8 @@
   align-items: center;
   gap: 0.5rem;
   width: 50%;
+  position: sticky;
+  top: 10px;
 }
 
 @media (max-width: 770px) {

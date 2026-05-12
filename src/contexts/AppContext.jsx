@@ -124,7 +124,7 @@ const AppContextProvider = (props) => {
       headers,
     );
 
-    setTasks((prev) => [...prev, task]);
+    setTasks((prev) => [...prev, { ...task, isNew: true }]);
     setCreateLoading(false);
   };
 

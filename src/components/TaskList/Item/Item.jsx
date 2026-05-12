@@ -29,7 +29,6 @@ const Item = (props) => {
 
   useEffect(() => {
     if (itemRef.current && isNew) {
-      console.log(itemRef.current);
       itemRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
